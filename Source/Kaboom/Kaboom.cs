@@ -17,10 +17,16 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public double kaboomTime;
 
-        [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 2f, guiName = "Kaboom!")]
+        [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Kaboom!", active = true)]
         public void KaboomEvent()
         {
             KaboomIt();
+        }
+
+        [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Cancel Kaboom!", active = false)]
+        public void CancelKaboomEvent()
+        {
+            CancelKaboomIt();
         }
 
         [KSPAction("Kaboom!")]
@@ -31,6 +37,8 @@ namespace Kaboom
 
         private void KaboomIt()
         {
+            Events["CancelKaboomEvent"].active = true;
+            Events["KaboomEvent"].active = false;
             part.force_activate();
 
             if (delay == 0)
@@ -39,14 +47,23 @@ namespace Kaboom
             }
             else
             {
+                ScreenMessages.PostScreenMessage("Kaboom set for " + delay + " seconds.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
                 kaboomTime = Planetarium.GetUniversalTime() + delay;
                 timerActive = true;
             }
         }
 
+        private void CancelKaboomIt()
+        {
+            Events["CancelKaboomEvent"].active = false;
+            Events["KaboomEvent"].active = true;
+            ScreenMessages.PostScreenMessage("Kaboom cancelled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
+            timerActive = false;
+        }
+
         public override void OnUpdate()
         {
-            base.OnFixedUpdate();
+            base.OnUpdate();
             if (timerActive)
             {
                 if (Planetarium.GetUniversalTime() >= kaboomTime)
