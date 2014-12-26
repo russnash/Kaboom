@@ -1,0 +1,13 @@
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Kaboom.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Kaboom.pdb
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Assembly-CSharp.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\TDx.TDxInput.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Mono.Cecil.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Mono.Security.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\Assembly-CSharp.xml
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.xml
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.csprojResolveAssemblyReference.cache
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.dll
+C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.pdb
