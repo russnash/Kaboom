@@ -37,7 +37,6 @@ namespace Kaboom
 
             if (activeInStaging)
             {
-                part.stackIcon.SetIconColor(XKCDColors.Orange);
                 part.ActivatesEvenIfDisconnected = true;
                 Staging.SortIcons();
             }
@@ -50,15 +49,13 @@ namespace Kaboom
 
             if (activeInStaging)
             {
-                part.deactivate();
-                part.stackIcon.CreateIcon();
-                part.stackIcon.SetIconColor(XKCDColors.Orange);
+                Staging.CreateIcon(part);
                 part.ActivatesEvenIfDisconnected = true;
                 ScreenMessages.PostScreenMessage("Added Kaboom action to staging", 5.0f, ScreenMessageStyle.UPPER_CENTER);
             }
             else
             {
-                part.stackIcon.RemoveIcon();
+                Staging.RemoveIcon(Staging.FindIcon(part));
                 ScreenMessages.PostScreenMessage("Removed Kaboom action from staging", 5.0f, ScreenMessageStyle.UPPER_CENTER);
             }
             Staging.SortIcons();
@@ -104,7 +101,6 @@ namespace Kaboom
 
         void kaboomTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            ScreenMessages.PostScreenMessage("Tick...");
             if (timerActive)
             {
                 if (Planetarium.GetUniversalTime() >= kaboomTime)
@@ -125,6 +121,15 @@ namespace Kaboom
             Events["KaboomEvent"].active = true;
             ScreenMessages.PostScreenMessage("Kaboom cancelled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
             timerActive = false;
+        }
+
+        public override void OnActive()
+        {
+            base.OnActive();
+            if (activeInStaging)
+            {
+                KaboomIt();
+            }
         }
     }
 }
