@@ -1,1 +1,0 @@
-copy /Y .\Kaboom.dll d:\KSP_MOD\GameData\Kaboom\Plugins\
