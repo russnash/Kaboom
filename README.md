@@ -1,8 +1,3 @@
-Kaboom!
-=======
-
-Kaboom mod for KSP
-
 What is Kaboom!?
 ================
 
