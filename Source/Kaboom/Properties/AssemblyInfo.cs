@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Kaboom")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Peninsula Regional Medical Center")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Kaboom")]
-[assembly: AssemblyCopyright("Copyright © Peninsula Regional Medical Center 2014")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
