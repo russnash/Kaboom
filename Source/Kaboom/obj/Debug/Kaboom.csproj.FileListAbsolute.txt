@@ -11,3 +11,16 @@ C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.xml
 C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.csprojResolveAssemblyReference.cache
 C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.dll
 C:\Users\P24508\Documents\GitHub\Kaboom\Source\Kaboom\obj\Debug\Kaboom.pdb
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\Kaboom.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\Kaboom.pdb
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\Assembly-CSharp.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\Assembly-CSharp-firstpass.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\TrackIRUnity.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.UI.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\KSPAssets.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\Mono.Cecil.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\bin\Debug\UnityEngine.xml
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\obj\Debug\Kaboom.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\obj\Debug\Kaboom.dll
+D:\Visual Studio 2015\Projects\Kaboom\Source\Kaboom\obj\Debug\Kaboom.pdb
