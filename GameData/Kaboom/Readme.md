@@ -1,7 +1,7 @@
 <!-- Readme.md v1.1.2.0
 Kaboom! (BOOM)
 created: 11 Aug 2018
-updated: 01 Feb 2020 -->
+updated: 2020 04 05 -->
 
 ## Download on [SpaceDock][MOD:rel-spacedock] or [Github][MOD:rel-github] or [Curseforge][MOD:rel-curseforge]. Also available on [CKAN][MOD:rel-ckan].  
 
@@ -102,8 +102,8 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [shield:license:original]: https://img.shields.io/badge/License-WTFPL-red?backgroud=black?style=plastic "WTFPL"  
 [MOD:original:download]: https://github.com/russnash/Kaboom/releases/latest  
 
-[LOGO:gplv3]:   https://i.postimg.cc/90kCDs7K/gplv3-48x17.png
-[LOGO:WTFPL]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL"  
+[LOGO:gplv2]: https://i.postimg.cc/9FrwMgK6/GPL-17x17.png "GPLv2"  
+[LOGO:wtfpl]: http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL"  
 
 [MOD:rel-github]: https://github.com/zer0Kerbal/Kaboom/releases/latest "GitHub"
 [MOD:rel-spacedock]: http://spacedock.info/mod/833
