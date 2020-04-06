@@ -172,8 +172,8 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [thread:mm]:  http://forum.kerbalspaceprogram.com/index.php?/topic/50533-* "ModuleManager"  
 [thread:kcl]:  https://forum.kerbalspaceprogram.com/index.php?/topic/179207-* "Kerbal Change Log"  
 
-[thread:tweakscale]:            https://forum.kerbalspaceprogram.com/index.php?/topic/179030-* "TweakScale"  
-[thread:communityresourcepack]: http://forum.kerbalspaceprogram.com/index.php?/topic/83007-* "Community Resource Pack"  
+[thread:twk]: https://forum.kerbalspaceprogram.com/index.php?/topic/179030-* "TweakScale"  
+[thread:crp]: http://forum.kerbalspaceprogram.com/index.php?/topic/83007-* "Community Resource Pack"  
 [thread:getsupport]: https://forum.kerbalspaceprogram.com/index.php?/topic/83212-*
 
 [LINK:zer0Kerbal]:     https://forum.kerbalspaceprogram.com/index.php?/profile/190933-zer0kerbal/ "zer0Kerbal"  
