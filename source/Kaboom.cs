@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace Kaboom
+﻿namespace Kaboom
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ModuleKaboom : PartModule
     {
-        [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay", 
+        [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay",
             groupDisplayName = "<color=red><b>Switch Safety Cover</b></color>", groupName = "Kaboom", groupStartCollapsed = true,
-            guiUnits = "Seconds"), 
+            guiUnits = "Seconds"),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
+
         public float delay = 0;
 
         [KSPField(isPersistant = true)]
-        public bool timerActive = false;
+        public bool timerActive;
 
         [KSPField(isPersistant = true)]
         public double kaboomTime;
@@ -34,11 +32,9 @@ namespace Kaboom
 
         [KSPAction("Kaboom!")]
         public void KaboomAction(KSPActionParam param)
-        {
-            KaboomIt();
-        }
+=> KaboomIt();
 
-        private void KaboomIt()
+        void KaboomIt()
         {
             Events["CancelKaboomEvent"].active = true;
             Events["KaboomEvent"].active = false;
@@ -56,7 +52,7 @@ namespace Kaboom
             }
         }
 
-        private void CancelKaboomIt()
+        void CancelKaboomIt()
         {
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;
