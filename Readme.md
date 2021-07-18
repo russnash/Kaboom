@@ -9,7 +9,8 @@ updated: 17 Jul 2021 -->
 # Kaboom! (BOOM)  
 ## Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@russnash37][LINK:russnash37]  
 
-## *Another way to not go to space today!*  
+## *Another way to not go to space today!*
+##  *What can me more Kerbal than more Explosions!*
 
 ![Mod Version][shield:mod:latest]  
 ![KSP version][shield:ksp] ![KSP-AVC][shield:kspavc] ![License GPLv2][shield:license]  
