@@ -3,8 +3,7 @@ Kaboom! (BOOM)
 created: 11 Aug 2018
 updated: 17 Jul 2021 -->
 
-
-## Download on [Curseforge][MOD:curseforge] or [Github][MOD:github] or [SpaceDock][MOD:spacedock]. Also available on [CKAN][CKAN:url].  
+## Download on  [Curseforge][MOD:curseforge] or [Github][MOD:github] or [SpaceDock][MOD:spacedock]. Also available on [CKAN][MOD:ckan].    
 
 ***
 
