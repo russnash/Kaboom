@@ -107,7 +107,7 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 
 [MOD:rel-github]: https://github.com/zer0Kerbal/Kaboom/releases/latest "GitHub"
 [MOD:rel-spacedock]: http://spacedock.info/mod/833
-[MOD:rel-curseforge]: https://www.curseforge.com/kerbal/ksp-mods/kaboom
+[MOD:rel-curseforge]: https://www.curseforge.com/kerbal/ksp-mods/kaboOom
 [MOD:rel-ckan]: http://forum.kerbalspaceprogram.com/index.php?/topic/90246-*
 
 [image:rel-github]:       https://i.imgur.com/RE4Ppr9.png
