@@ -100,7 +100,7 @@ Source: [GitHub][MOD:original:source]
 License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]  
 > Kaboom! is released under an open license, feel free to modify and re-release Kaboom! just be sure to link back to the original version and to also include this license. 
 
- *Be Kind: Lithobrake, not Jedbrake! Keep your Module Manager up to date*
+[^1]: *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
 ###### v1.3.0.0 original: 11 Aug 2018 0K updated: 17 Jul 2021 zed'K
 
@@ -190,7 +190,4 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [LINK:russnash37]: https://forum.kerbalspaceprogram.com/index.php?/profile/77512-russnash37/ "RussNash37"
   
 [LINK:imgur:0]: https://imgur.com/a/jvizF "Kaboom! on Imgur"  
-
 [IMG:hero:0]: https://i.imgur.com/CCPTqdY.png "KaBoOom!"
-
-   [^1]: *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
