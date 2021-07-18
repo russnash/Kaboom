@@ -4,12 +4,17 @@ created: 11 Aug 2018
 updated: 17 Jul 2021 -->
   
 
-## Download on  [Curseforge][MOD:curseforge] or [Github][MOD:github] or [SpaceDock][MOD:spacedock]. Also available on [CKAN][MOD:ckan].  
+## Download on  [Curseforge][MOD:curseforge] or [Github][MOD:github] or [SpaceDock][MOD:spacedock]. Also available on [CKAN][CKAN:url].  
 
-# Kaboom! (BOOM)
-## *now with more Boom!*
+# Kaboom! (BOOM)  
+## Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@russnash37][LINK:russnash37]  
 
-#### Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@russnash37][LINK:russnash37]  
+## *Another way to not go to space today!*  
+
+![Mod Version][shield:mod:latest]  
+![KSP version][shield:ksp] ![KSP-AVC][shield:kspavc] ![License GPLv2][shield:license]  
+![Curseforge][shield:curseforge] ![CKAN][shield:ckan] ![GitHub][shield:github] ![SpaceDock][shield:spacedock]  
+![Code][shield:code] ![Validate AVC .version files][shield:avcvalid]  
 
 ***
 ## What is Kaboom!?
@@ -18,17 +23,13 @@ Kaboom! is a very simple mod for KSP that allows the destruction of individual p
 - Kaboom parts either through the right-click menu or via action groups.
 - Parts can be kaboomed either immediately or via a tweakable delay timer of up to 30 seconds.
 - Kabooms can also be set by kerbals on EVA.
-------  
-
-![Mod Version][shield:mod:latest] 
-![KSP version][shield:ksp] ![KSP-AVC][shield:kspavc] ![License GPLv2][shield:license]  
-![Curseforge][shield:curseforge] ![CKAN][shield:ckan] ![GitHub][shield:github] ![SpaceDock][shield:spacedock]  
-![Code][shield:code] ![Validate AVC .version files][shield:avcvalid] 
+***
 
 Future planned features:
 - KaboOoming of parts via staging.
+***  
 
-![View full album][LINK:imgur:0]  
+[View full album][LINK:imgur:0]  
 
 ***  
 ![Kaboom!][IMG:hero:0]   
@@ -46,7 +47,7 @@ Future planned features:
 - *See [Known Issues][MOD:issues] for full details of feature requests, and known issues*
 
 ### Dependencies  
-- [x]  [Kerbal Space Program][KSP:website] [![][shield:ksp]][KSP:website] ***may*** work on other versions ]/YMMV/
+- [x]  [Kerbal Space Program][KSP:website] [![][shield:ksp]][KSP:website] ***may*** work on other versions /YMMV/
 - [x]  [Module Manager][thread:mm]  [1](^1) 
 ### Recommends  
 - [x]  [Kerbal Change Log][thread:kcl]  
@@ -88,7 +89,7 @@ Future planned features:
 ### License
 #### aka Legal Mumbo Jumbo
 Source: [GitHub][MOD:github:repo]  
-License: ![License GPLv2][shield:license] ![][LOGO:gplv2]    
+License: ![License GPLv2][shield:license]    
 > *** All bundled mods are distributed under their own licenses***  
 > *** All art assets (textures, models, animations) are distributed under their own licenses***   
 ### Original
@@ -121,12 +122,11 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [shield:license:original]: https://img.shields.io/badge/License-WTFPL-red?backgroud=black?style=plastic "WTFPL"
 [MOD:original:download]: https://github.com/russnash/Kaboom/releases/latest
 
-[LOGO:gplv2]: https://i.postimg.cc/9FrwMgK6/GPL-17x17.png "GPLv2"
 [LOGO:wtfpl]: https://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL"
 
-[MOD:rel-github]:     https://github.com/zer0Kerbal/Kaboom/releases/latest "GitHub"
-[MOD:rel-spacedock]:  https://spacedock.info/mod/833
-[MOD:rel-curseforge]: https://www.curseforge.com/kerbal/ksp-mods/kaboom
+[MOD:github]:     https://github.com/zer0Kerbal/Kaboom/releases/latest "GitHub"
+[MOD:spacedock]:  https://spacedock.info/mod/833
+[MOD:curseforge]: https://www.curseforge.com/kerbal/ksp-mods/kaboom
 
 [image:rel-github]:     https://i.imgur.com/RE4Ppr9.png
 [image:rel-spacedock]:  https://i.imgur.com/m0a7tn2.png
@@ -151,8 +151,8 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 
 [shield:spacedock]:  https://img.shields.io/badge/SpaceDock-Listed-blue?labelColor=black&style=plastic&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDAgNTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzFBMUExQTt9Cgkuc3Qxe2ZpbGw6IzA1Nzg5Mzt9Cgkuc3Qye2ZpbGw6IzA3QUNEMjt9Cjwvc3R5bGU+CjxwYXRoIGlkPSJYTUxJRF8xXyIgY2xhc3M9InN0MCIgZD0iTTQwMCwwLjZIMTAwYy01NSwwLTEwMCw0NS0xMDAsMTAwVjQwMGMwLDU1LDQ1LDEwMCwxMDAsMTAwaDMwMGM1NSwwLDEwMC00NSwxMDAtMTAwVjEwMC42CglDNTAwLDQ1LjYsNDU1LDAuNiw0MDAsMC42eiIvPgo8ZyBpZD0iWE1MSURfNl8iPgoJPGcgaWQ9IlhNTElEXzlfIj4KCQk8cGF0aCBpZD0iWE1MSURfMTdfIiBjbGFzcz0ic3QxIiBkPSJNMTgzLjMsMTY1LjljNi40LTMuNiwxNi45LTMuNiwyMy4zLDBMNDY3LjQsMzE0YzYuNCwzLjYsNi40LDkuNiwwLDEzLjJMMjA2LjYsNDc0LjQKCQkJYy02LjQsMy42LTE3LjcsNi42LTI1LDYuNmgtNDQuOGMtNy40LDAtOC4xLTMtMS43LTYuNmwyNjEtMTQ3LjJjNi40LTMuNiw2LjQtOS42LDAtMTMuMkwxNzEsMTg2Yy02LjQtMy42LTYuNC05LjYsMC0xMy4yCgkJCUwxODMuMywxNjUuOXoiLz4KCTwvZz4KCTxnIGlkPSJYTUxJRF84XyI+CgkJPHBhdGggaWQ9IlhNTElEXzE2XyIgY2xhc3M9InN0MiIgZD0iTTMxOC44LDE5Yy03LjQsMC0xOC42LDIuOC0yNSw2LjRMMzMsMTczLjRjLTYuNCwzLjYtNi40LDkuNSwwLDEzLjFsMjYwLjcsMTQ3LjEKCQkJYzYuNCwzLjYsMTYuOSwzLjYsMjMuMywwbDEyLjMtN2M2LjQtMy42LDYuNC05LjUsMC0xMy4ybC0yMjUuMS0xMjdjLTYuNC0zLjYtNi40LTkuNSwwLTEzLjJMMzY1LjYsMjUuNGM2LjQtMy42LDUuNi02LjQtMS43LTYuNAoJCQlIMzE4Ljh6Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg== "SpaceDock"  
 
-[shield:avcvalid]:	https://github.com/zer0Kerbal/StageLock/actions/workflows/AVC-VersionFileValidator.yml/badge.svg?branch=main "https://github.com/zer0Kerbal/StageLock/actions/workflows/AVC-VersionFileValidator.yml" "Valid .version file"  
-[shield:kspavc]:     https://img.shields.io/badge/KSP-AVC--supported-brightgreen.svg?style=plastic "KSP-AVC"  
+[shield:avcvalid]:	https://github.com/zer0Kerbal/Kaboom/actions/workflows/AVC-VersionFileValidator.yml/badge.svg?branch=master "https://github.com/zer0Kerbal/Kaboom/actions/workflows/AVC-VersionFileValidator.yml"  
+[shield:kspavc]:	 https://img.shields.io/badge/KSP-AVC--supported-brightgreen.svg?style=plastic   
 
 <!-- zer0Kerbal mods -->
 [thread:ODFC]: https://forum.kerbalspaceprogram.com/index.php?/topic/187625-* "On Demand Fuel Cells"
@@ -177,6 +177,7 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [thread:BIO]:  https://forum.kerbalspaceprogram.com/index.php?/topic/191426-* "Biomatic"
 [thread:MK]: https://forum.kerbalspaceprogram.com/index.php?/topic/191525-* "MoarKerbals"  
 [thread:KPLX]: https://forum.kerbalspaceprogram.com/index.php?/topic/202749-* "Komplexity"  
+[thread:B9S]:  https://forum.kerbalspaceprogram.com/index.php?/topic/190870-* "B9 Stock Patches"  
 
 [thread:mm]:  https://forum.kerbalspaceprogram.com/index.php?/topic/50533-* "ModuleManager"
 [thread:kcl]:  https://forum.kerbalspaceprogram.com/index.php?/topic/179207-* "Kerbal Change Log"
