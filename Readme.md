@@ -191,3 +191,7 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
   
 [LINK:imgur:0]: https://imgur.com/a/jvizF "Kaboom! on Imgur"  
 [IMG:hero:0]: https://i.imgur.com/CCPTqdY.png "KaBoOom!"
+  
+<!-- 
+GPLv2
+by zer0Kerbal -->
