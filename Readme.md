@@ -16,6 +16,8 @@ updated: 17 Jul 2021 -->
 ![Curseforge][shield:curseforge] ![CKAN][shield:ckan] ![GitHub][shield:github] ![SpaceDock][shield:spacedock]  
 ![Code][shield:code] ![Validate AVC .version files][shield:avcvalid]  
 
+![Kaboom!][IMG:hero:0]   
+
 ***
 ## What is Kaboom!?
 
@@ -32,7 +34,7 @@ Future planned features:
 [View full album][LINK:imgur:0]  
 
 ***  
-![Kaboom!][IMG:hero:0]   
+![Kaboom!][IMG:hero:1]   
 ***
 
 ### Installation Directions:
@@ -78,6 +80,8 @@ Future planned features:
 - [x] [Kerbal Change Log][thread:kcl]  
 ### Conflicts
 - [x] none
+### Replaces
+- [x]  [Kaboom][MOD:original:thread]  
 ### Tags
 - [x]  plugin, config 
 ***
@@ -99,6 +103,10 @@ Author: [@RussNash37][LINK:russnash37]
 Source: [GitHub][MOD:original:source]  
 License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]  
 > Kaboom! is released under an open license, feel free to modify and re-release Kaboom! just be sure to link back to the original version and to also include this license. 
+***  
+
+<!-- graphical links to downloads -->
+ [![][image:curseforge]][MOD:curseforge] [![][image:github]][MOD:github] [![][image:spacedock]][MOD:spacedock]  
 
 [^1]: *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
@@ -128,9 +136,9 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [MOD:spacedock]:  https://spacedock.info/mod/833
 [MOD:curseforge]: https://www.curseforge.com/kerbal/ksp-mods/kaboOom
 
-[image:rel-github]:     https://i.imgur.com/RE4Ppr9.png
-[image:rel-spacedock]:  https://i.imgur.com/m0a7tn2.png
-[image:rel-curseforge]: https://i.postimg.cc/RZNyB5vP/Download-On-Curse.png
+[image:github]:     https://i.imgur.com/RE4Ppr9.png
+[image:spacedock]:  https://i.imgur.com/m0a7tn2.png
+[image:curseforge]: https://i.postimg.cc/RZNyB5vP/Download-On-Curse.png
 [image:get-support]:    https://i.postimg.cc/vHP6zmrw/image.png
 
 [CKAN:url]: https://forum.kerbalspaceprogram.com/index.php?/topic/90246-*
@@ -190,8 +198,5 @@ License: ![License WTFPL][shield:license:original] ![][LOGO:wtfpl]
 [LINK:russnash37]: https://forum.kerbalspaceprogram.com/index.php?/profile/77512-russnash37/ "RussNash37"
   
 [LINK:imgur:0]: https://imgur.com/a/jvizF "Kaboom! on Imgur"  
-[IMG:hero:0]: https://i.imgur.com/CCPTqdY.png "KaBoOom!"
-  
-<!-- 
-GPLv2
-by zer0Kerbal -->
+[IMG:hero:0]: https://raw.githubusercontent.com/zer0Kerbal/Kaboom/master/img/HeroLogo_400x400.png "KaBoOom!"
+[IMG:hero:1]: https://i.imgur.com/CCPTqdY.png "KaBoOom!"
