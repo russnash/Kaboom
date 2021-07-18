@@ -1,4 +1,9 @@
-﻿namespace Kaboom
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
+namespace Kaboom
 {
     /// <summary>
     /// 
@@ -13,7 +18,7 @@
         public float delay = 0;
 
         [KSPField(isPersistant = true)]
-        public bool timerActive;
+        public bool timerActive = false;
 
         [KSPField(isPersistant = true)]
         public double kaboomTime;
@@ -34,7 +39,7 @@
         public void KaboomAction(KSPActionParam param)
 => KaboomIt();
 
-        void KaboomIt()
+        private void KaboomIt()
         {
             Events["CancelKaboomEvent"].active = true;
             Events["KaboomEvent"].active = false;
@@ -52,7 +57,7 @@
             }
         }
 
-        void CancelKaboomIt()
+        private void CancelKaboomIt()
         {
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;

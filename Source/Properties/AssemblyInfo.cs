@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("rushnash37, zer0Kerbal")]
 [assembly: AssemblyProduct("Kaboom")]
-[assembly: AssemblyCopyright("GPLv2 2020")]
+[assembly: AssemblyCopyright("Copyright © 2020 All Rights Reserved")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
