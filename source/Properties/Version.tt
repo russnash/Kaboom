@@ -19,7 +19,7 @@
 	//
 	// Update the following with mod name as listed on the .version file
 	//
-	string PROJECT_NAME = "Chrononaut";
+	string PROJECT_NAME = "Kaboom";
 	int major = 0;
 	int minor = 0;
 	int patch = 0;
