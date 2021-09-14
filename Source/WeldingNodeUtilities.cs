@@ -1,3 +1,6 @@
+// Based on the https://github.com/UmbraSpaceIndustries/Konstruction/tree/master/Source/Konstruction/Konstruction/Welding
+// GPLV3
+
 using System.Linq;
 using UnityEngine;
 //using USITools;

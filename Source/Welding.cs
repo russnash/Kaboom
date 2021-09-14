@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Based on the https://github.com/UmbraSpaceIndustries/Konstruction/tree/master/Source/Konstruction/Konstruction/Welding
+// GPLV3
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +12,7 @@ using TestScripts;
 
 namespace Kaboom
 {
+
     public class Welding
     {
         Vessel vessel;
