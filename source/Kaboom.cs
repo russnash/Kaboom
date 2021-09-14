@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.Localization;
+
 namespace Kaboom
 {
     /// <summary>
@@ -23,6 +25,32 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public double kaboomTime;
 
+        [KSPField(isPersistant = true)]
+        public bool isGlued = false;
+
+        [KSPField(guiName = "Glued", guiActive = true, guiActiveEditor = true,
+    groupName = "Kaboom", groupStartCollapsed = true)]
+        public string gluedText = Localizer.Format("#autoLOC_6001071"); /*Disabled*/
+
+
+        [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Enable Glued", groupName = "Kaboom", active = true)]
+        public void GluedEvent()
+        {
+            isGlued = !isGlued;
+            if (isGlued)
+            {
+                gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001072")/*Enabled*/;
+                Events["GluedEvent"].guiName = "Disable Glued";
+            }
+                
+            else
+            {
+                gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001071")/*Disabled*/;
+                Events["GluedEvent"].guiName = "Enable Glued";
+            }
+
+        }
+
         [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Kaboom!", groupName = "Kaboom", active = true)]
         public void KaboomEvent()
         {
@@ -36,8 +64,7 @@ namespace Kaboom
         }
 
         [KSPAction("Kaboom!")]
-        public void KaboomAction(KSPActionParam param)
-=> KaboomIt();
+        public void KaboomAction(KSPActionParam _) => KaboomIt();
 
         private void KaboomIt()
         {
@@ -47,13 +74,26 @@ namespace Kaboom
 
             if (delay == 0)
             {
-                part.explode();
+                Proceed();
             }
             else
             {
                 ScreenMessages.PostScreenMessage("Kaboom set for " + delay + " seconds.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
                 kaboomTime = Planetarium.GetUniversalTime() + delay;
                 timerActive = true;
+            }
+        }
+
+        private void Proceed()
+        {
+            if (isGlued)
+            {
+                var k = new Welding(vessel, part);
+                k.MergeParts(true);
+            }
+            else
+            {
+                part.explode();
             }
         }
 
@@ -73,10 +113,10 @@ namespace Kaboom
                 if (Planetarium.GetUniversalTime() >= kaboomTime)
                 {
                     timerActive = false;
-                    part.explode();
+                    Proceed();
                 }
             }
-            base.OnUpdate();
+            //base.OnUpdate();
         }
     }
 }
