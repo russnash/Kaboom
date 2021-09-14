@@ -32,7 +32,7 @@ namespace Kaboom
             return sucess;
         }
 
-        private WeldingData LoadWeldingData(bool silent = false)
+        private WeldingData LoadWeldingData()
         {
             /**********************
              * 
@@ -45,28 +45,28 @@ namespace Kaboom
             var wData = new WeldingData();
             wData.KaboomGluedPart = part;
 
+            int attachedPartsCount = 0;
+            foreach (var n in part.attachNodes)
+                if (n.attachedPart != null)
+                    attachedPartsCount++;
 
-            if (part.attachNodes.Count == 2)
+            //Debug.Log("attachedPartsCount: " + attachedPartsCount + " part.children.Count: " + part.children.Count);
+
+            if (attachedPartsCount == 2 && part.children.Count == 1)
             {
-                
                 wData.LinkedPartA = part.parent;
-
-                foreach(var n in part.attachNodes)
-                    if (n.attachedPart != part.parent)
-                        wData.LinkedPartB = n.attachedPart;
+                wData.LinkedPartB = part.children[0];
             }
 
             if (wData.LinkedPartA == null || wData.LinkedPartB == null)
             {
-                if (!silent)
-                    ScreenMessages.PostScreenMessage("This part need to have 2 parts on attachment nodes");
+                ScreenMessages.PostScreenMessage("This part need to have 2 parts on attachment nodes");
                 return null;
             }
 
             if (wData.KaboomGluedPart == vessel.rootPart)
             {
-                if (!silent)
-                    ScreenMessages.PostScreenMessage("This part is the root part!  Cancelling");
+                ScreenMessages.PostScreenMessage("This part is the root part!  Cancelling");
                 return null;
             }
 
