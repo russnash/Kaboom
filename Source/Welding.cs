@@ -1,14 +1,7 @@
 ﻿// Based on the https://github.com/UmbraSpaceIndustries/Konstruction/tree/master/Source/Konstruction/Konstruction/Welding
 // GPLV3
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using System.Reflection;
-using PreFlightTests;
-using TestScripts;
 
 namespace Kaboom
 {
@@ -23,19 +16,20 @@ namespace Kaboom
             this.part = part;
         }
 
-        public void MergeParts(bool compress)
+        public bool MergeParts(bool compress)
         {
             if (vessel.rootPart == part)
             {
                 ScreenMessages.PostScreenMessage("You cannot weld the root part!");
-                return;
+                return false;
             }
 
             var wData = LoadWeldingData();
             if (wData == null)
-                return;
+                return false;
 
-            PerformWeld(wData, compress);
+            bool sucess =  PerformWeld(wData, compress);
+            return sucess;
         }
 
         private WeldingData LoadWeldingData(bool silent = false)
@@ -82,15 +76,20 @@ namespace Kaboom
 
         private Vector3 GetOffset(WeldingData wData)
         {
-            var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
-            var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
+            //var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
+            //var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
 
-            Vector3 offset = nodeA.position - nodeB.position;
-            Debug.Log("offset: " + offset);
-            return offset;
+            // offset in wrong direction //Vector3 offset = nodeA.position - nodeB.position;
+            // nulref //Vector3 offset2 = nodeA.nodeTransform.localPosition - nodeB.nodeTransform.localPosition;
+
+            // works for a stack of simmetrical parts 
+            Vector3 offset3 = wData.LinkedPartA.transform.localPosition - wData.LinkedPartB.transform.localPosition;
+            offset3.Normalize();
+            offset3 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
+            return offset3;
         }
 
-        private void PerformWeld(WeldingData wData, bool compress)
+        private bool PerformWeld(WeldingData wData, bool compress)
         {
             var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
             var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
@@ -131,7 +130,9 @@ namespace Kaboom
 
             wData.LinkedPartB.attachJoint = newJoint;
 
-            SoftExplode(wData.KaboomGluedPart);
+            //SoftExplode(wData.KaboomGluedPart);
+            wData.KaboomGluedPart.explode();
+            return true;
         }
 
         private static void SoftExplode(Part thisPart)

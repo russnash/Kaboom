@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace Kaboom
 {
@@ -13,7 +8,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay",
-            groupDisplayName = "<color=red><b>Switch Safety Cover</b></color>", groupName = "Kaboom", groupStartCollapsed = true,
+            groupDisplayName = "<color=red><b>Kaboom Safety Cover</b></color>", groupName = "Kaboom", groupStartCollapsed = true,
             guiUnits = " Seconds"),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
 
@@ -32,7 +27,8 @@ namespace Kaboom
         public string gluedText = Localizer.Format("#autoLOC_6001071"); /*Disabled*/
 
 
-        [KSPEvent(guiName = "Toggle Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom", active = true)]
+        [KSPEvent(guiName = "Toggle Superglue", groupName = "Kaboom", 
+            guiActive = true, guiActiveEditor = true, active = true, guiActiveUncommand = true)]
         public void GluedEvent()
         {
             isGlued = !isGlued;
@@ -46,13 +42,15 @@ namespace Kaboom
             }
         }
 
-        [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Kaboom!", groupName = "Kaboom", active = true)]
+        [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom", 
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = true, guiActiveUncommand = true)]
         public void KaboomEvent()
         {
             KaboomIt();
         }
 
-        [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Cancel Kaboom!", groupName = "Kaboom", active = false)]
+        [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom", 
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = false, guiActiveUncommand = true)]
         public void CancelKaboomEvent()
         {
             CancelKaboomIt();
@@ -69,7 +67,9 @@ namespace Kaboom
 
             if (delay == 0)
             {
-                Proceed();
+                bool success = Proceed();
+                if (!success)
+                    CancelKaboomIt();
             }
             else
             {
@@ -79,16 +79,18 @@ namespace Kaboom
             }
         }
 
-        private void Proceed()
+        private bool Proceed()
         {
             if (isGlued)
             {
                 var k = new Welding(vessel, part);
-                k.MergeParts(true);
+                bool success = k.MergeParts(true);
+                return success;
             }
             else
             {
                 part.explode();
+                return true;
             }
         }
 
@@ -108,7 +110,9 @@ namespace Kaboom
                 if (Planetarium.GetUniversalTime() >= kaboomTime)
                 {
                     timerActive = false;
-                    Proceed();
+                    bool success = Proceed();
+                    if (!success)
+                        CancelKaboomIt();
                 }
             }
             //base.OnUpdate();
