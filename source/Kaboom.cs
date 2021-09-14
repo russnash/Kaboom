@@ -14,7 +14,7 @@ namespace Kaboom
     {
         [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay",
             groupDisplayName = "<color=red><b>Switch Safety Cover</b></color>", groupName = "Kaboom", groupStartCollapsed = true,
-            guiUnits = "Seconds"),
+            guiUnits = " Seconds"),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
 
         public float delay = 0;
@@ -28,23 +28,21 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
-        [KSPField(guiName = "Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom")]
+        [KSPField(isPersistant = true, guiName = "Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom")]
         public string gluedText = Localizer.Format("#autoLOC_6001071"); /*Disabled*/
 
 
-        [KSPEvent(guiName = "Enable Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom", active = true)]
+        [KSPEvent(guiName = "Toggle Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom", active = true)]
         public void GluedEvent()
         {
             isGlued = !isGlued;
             if (isGlued)
             {
-                gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001072")/*Enabled*/;
-                Events["GluedEvent"].guiName = "Disable Superglue";
+                gluedText = Localizer.Format("#autoLOC_6001072")/*Enabled*/;
             }
             else
             {
-                gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001071")/*Disabled*/;
-                Events["GluedEvent"].guiName = "Enable Superglue";
+                gluedText = Localizer.Format("#autoLOC_6001071")/*Disabled*/;
             }
         }
 
