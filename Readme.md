@@ -3,6 +3,8 @@ Kaboom! (BOOM)
 created: 11 Aug 2018
 updated: 17 Jul 2021 -->
   
+[![Version](https://img.shields.io/github/release/zer0Kerbal/Kaboom.svg?label=Version&colorB=4CC61E)](https://github.com/zer0Kerbal/Kaboom/releases) 
+[![Last Release](https://img.shields.io/github/release-date/zer0Kerbal/Kaboom.svg?label=Last%20Release&colorB=99C611)](https://github.com/zer0Kerbal/Kaboom/releases) 
 
 ## Download on  [Curseforge][MOD:curseforge] or [Github][MOD:github] or [SpaceDock][MOD:spacedock]. Also available on [CKAN][CKAN:url].  
 
