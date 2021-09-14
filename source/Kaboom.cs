@@ -28,27 +28,24 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
-        [KSPField(guiName = "Glued", guiActive = true, guiActiveEditor = true,
-    groupName = "Kaboom", groupStartCollapsed = true)]
+        [KSPField(guiName = "Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom")]
         public string gluedText = Localizer.Format("#autoLOC_6001071"); /*Disabled*/
 
 
-        [KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "Enable Glued", groupName = "Kaboom", active = true)]
+        [KSPEvent(guiName = "Enable Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom", active = true)]
         public void GluedEvent()
         {
             isGlued = !isGlued;
             if (isGlued)
             {
                 gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001072")/*Enabled*/;
-                Events["GluedEvent"].guiName = "Disable Glued";
+                Events["GluedEvent"].guiName = "Disable Superglue";
             }
-                
             else
             {
                 gluedText = Events["GluedEvent"].guiName = Localizer.Format("#autoLOC_6001071")/*Disabled*/;
-                Events["GluedEvent"].guiName = "Enable Glued";
+                Events["GluedEvent"].guiName = "Enable Superglue";
             }
-
         }
 
         [KSPEvent(guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiName = "Kaboom!", groupName = "Kaboom", active = true)]
