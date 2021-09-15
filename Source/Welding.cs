@@ -132,17 +132,9 @@ namespace Kaboom
 
             wData.LinkedPartB.attachJoint = newJoint;
 
-            SoftExplode(wData.KaboomGluedPart);
+            WeldingUtilities.Explode(wData.KaboomGluedPart);
 
             return true;
-        }
-
-        public static void SoftExplode(Part thisPart)
-        {
-            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().softExplode)
-                thisPart.explosionPotential = Math.Min(thisPart.explosionPotential, 0.1f);
-
-            thisPart.explode();
         }
     }
 }

@@ -1,6 +1,7 @@
 // Based on the https://github.com/UmbraSpaceIndustries/Konstruction/tree/master/Source/Konstruction/Konstruction/Welding
 // GPLV3
 
+using System;
 using System.Linq;
 using UnityEngine;
 //using USITools;
@@ -80,6 +81,14 @@ namespace Kaboom
         public static AttachNode GetLinkingNode(Part p1, Part p2)
         {
             return p1.attachNodes.FirstOrDefault(an => an.attachedPart == p2);
+        }
+
+        public static void Explode(Part thisPart)
+        {
+            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().softExplode)
+                thisPart.explosionPotential = Math.Min(thisPart.explosionPotential, 0.1f);
+
+            thisPart.explode();
         }
     }
 }

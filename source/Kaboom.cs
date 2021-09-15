@@ -61,7 +61,7 @@ namespace Kaboom
             base.OnStart(state);
 
             if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().coloredPAW)
-                Fields["delay"].group.displayName = "<color=red><b>Kaboom Safety Cover</b></color>";
+                Fields["delay"].group.displayName = "<color=red>Kaboom Safety Cover</color>";
             else
                 Fields["delay"].group.displayName = "Kaboom Safety Cover";
 
@@ -99,7 +99,7 @@ namespace Kaboom
             }
             else
             {
-                Welding.SoftExplode(part);
+                WeldingUtilities.Explode(part);
                 return true;
             }
         }
