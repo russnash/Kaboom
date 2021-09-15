@@ -23,23 +23,20 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
-        [KSPField(isPersistant = true, guiName = "Superglue", guiActive = true, guiActiveEditor = true, groupName = "Kaboom")]
-        public string gluedText = Localizer.Format("#autoLOC_6001071"); /*Disabled*/
-
-
-        [KSPEvent(guiName = "Toggle Superglue", groupName = "Kaboom", 
+        [KSPEvent(groupName = "Kaboom", 
             guiActive = true, guiActiveEditor = true, active = true, guiActiveUncommand = true)]
         public void GluedEvent()
         {
             isGlued = !isGlued;
+            GUITextUpdate();
+        }
+
+        private void GUITextUpdate()
+        {
             if (isGlued)
-            {
-                gluedText = Localizer.Format("#autoLOC_6001072")/*Enabled*/;
-            }
+                Events["GluedEvent"].guiName = "Superglue: " + Localizer.Format("#autoLOC_6001072")/*Enabled*/;
             else
-            {
-                gluedText = Localizer.Format("#autoLOC_6001071")/*Disabled*/;
-            }
+                Events["GluedEvent"].guiName = "Superglue: " + Localizer.Format("#autoLOC_6001071")/*Disabled*/;
         }
 
         [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom", 
@@ -66,7 +63,9 @@ namespace Kaboom
             if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().coloredPAW)
                 Fields["delay"].group.displayName = "<color=red><b>Kaboom Safety Cover</b></color>";
             else
-                Fields["delay"].group.displayName = "<b>Kaboom Safety Cover</b>";
+                Fields["delay"].group.displayName = "Kaboom Safety Cover";
+
+            GUITextUpdate();
 
         }
 
