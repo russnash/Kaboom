@@ -85,7 +85,7 @@ namespace Kaboom
 
         public static void Explode(Part thisPart)
         {
-            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().softExplode)
+            if (HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>().softExplode)
                 thisPart.explosionPotential = Math.Min(thisPart.explosionPotential, 0.1f);
 
             thisPart.explode();

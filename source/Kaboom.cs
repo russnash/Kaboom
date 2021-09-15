@@ -60,7 +60,7 @@ namespace Kaboom
         {
             base.OnStart(state);
 
-            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().coloredPAW)
+            if (HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>().coloredPAW)
                 Fields["delay"].group.displayName = "<color=red>Kaboom Safety Cover</color>";
             else
                 Fields["delay"].group.displayName = "Kaboom Safety Cover";

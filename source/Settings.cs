@@ -17,7 +17,7 @@ namespace Kaboom
     // http://forum.kerbalspaceprogram.com/index.php?/topic/147576-modders-notes-for-ksp-12/#comment-2754813
     // search for "Mod integration into Stock Settings
 
-    public class Options : GameParameters.CustomParameterNode
+    public class KaboomSettings : GameParameters.CustomParameterNode
     {
         public override string Title { get { return "Kaboom!"; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
