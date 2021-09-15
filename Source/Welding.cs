@@ -1,6 +1,7 @@
 ﻿// Based on the https://github.com/UmbraSpaceIndustries/Konstruction/tree/master/Source/Konstruction/Konstruction/Welding
 // GPLV3
 
+using System;
 using UnityEngine;
 
 namespace Kaboom
@@ -79,8 +80,8 @@ namespace Kaboom
             //var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
             //var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
 
-            // offset in wrong direction //Vector3 offset = nodeA.position - nodeB.position;
-            // nulref //Vector3 offset2 = nodeA.nodeTransform.localPosition - nodeB.nodeTransform.localPosition;
+            //Vector3 offset = nodeA.position - nodeB.position;   // offset in wrong direction, depends of angle of the craft? 
+            //Vector3 offset2 = nodeA.nodeTransform.localPosition - nodeB.nodeTransform.localPosition;   // // nulref 
 
             // works for a stack of simmetrical parts 
             Vector3 offset3 = wData.LinkedPartA.transform.localPosition - wData.LinkedPartB.transform.localPosition;
@@ -95,7 +96,6 @@ namespace Kaboom
             var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
 
             var offset = GetOffset(wData);
-
 
             WeldingNodeUtilities.DetachPart(wData.KaboomGluedPart);
 
@@ -114,12 +114,10 @@ namespace Kaboom
             WeldingNodeUtilities.SpawnStructures(wData.LinkedPartA, nodeA);
             WeldingNodeUtilities.SpawnStructures(wData.LinkedPartB, nodeB);
 
-
             if (compress)
             {
                 WeldingNodeUtilities.MovePart(wData.LinkedPartB, offset);
             }
-
 
             PartJoint newJoint = PartJoint.Create(
                 wData.LinkedPartB,
@@ -130,14 +128,16 @@ namespace Kaboom
 
             wData.LinkedPartB.attachJoint = newJoint;
 
-            //SoftExplode(wData.KaboomGluedPart);
-            wData.KaboomGluedPart.explode();
+            SoftExplode(wData.KaboomGluedPart);
+
             return true;
         }
 
-        private static void SoftExplode(Part thisPart)
+        public static void SoftExplode(Part thisPart)
         {
-            thisPart.explosionPotential = 0.1f;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().softExplode)
+                thisPart.explosionPotential = Math.Min(thisPart.explosionPotential, 0.1f);
+
             thisPart.explode();
         }
     }

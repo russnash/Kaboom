@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Reflection;
 
-// This will add a tab to the Stock Settings in the Difficulty settings called "On Demand Fuel Cells"
+// This will add a tab to the Stock Settings in the Difficulty settings
 // To use, reference the setting using the following:
 //
-//  HighLogic.CurrentGame.Parameters.CustomParams<Options>().needsECtoStart
+//  HighLogic.CurrentGame.Parameters.CustomParams<Options>()
 //
 // As it is set up, the option is disabled, so in order to enable it, the player would have
 // to deliberately go in and change it
@@ -19,29 +19,21 @@ namespace Kaboom
 
     public class Options : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "Default Settings"; } }
+        public override string Title { get { return "Kaboom!"; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
         public override string Section { get { return "Kaboom!"; } }
         public override string DisplaySection { get { return "Kaboom!"; } }
         public override int SectionOrder { get { return 1; } }
 
 
-        [GameParameters.CustomParameterUI("Require EC to run",
-            toolTip = "if set to yes, the fuel cells will 'stall' if the vessels total electric charge reaches zero and will not function until vessel electric charge is above zero.",
-            newGameOnly = false,
+        [GameParameters.CustomParameterUI("Soft Explode",
+            toolTip = "Kaboom Explodes makes less fire",
             unlockedDuringMission = true
             )]
-        public bool needsECtoStart = false;
+        public bool softExplode = false;
 
-        [GameParameters.CustomParameterUI("Auto Fuel Mode Switch",
-            toolTip = "if current fuel mode becomes fuel deprived, will 'hunt' or 'search' for a fuel mode that has fuel.",
-            newGameOnly = false,
-            unlockedDuringMission = true)]
-        public bool autoSwitch = true;
-
-        [GameParameters.CustomParameterUI("PAW Color",
-            toolTip = "allow color coding in ODC PAW (part action window) / part RMB (right menu button).",
-            newGameOnly = false,
+        [GameParameters.CustomParameterUI("PAW Safety Cover is Red",
+            toolTip = "Red color coding of Kaboom Safety Cover in the Part Action Window.\nUpdates after scene change.",
             unlockedDuringMission = true)]
         public bool coloredPAW = true;
 
@@ -49,7 +41,7 @@ namespace Kaboom
         // the "if false" to "if true" and set the values as you like
 
 
-#if true
+#if false
         public override bool HasPresets { get { return true; } }
         public override void SetDifficultyPreset(GameParameters.Preset preset)
         {

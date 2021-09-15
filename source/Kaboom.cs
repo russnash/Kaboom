@@ -8,7 +8,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay",
-            groupDisplayName = "<color=red><b>Kaboom Safety Cover</b></color>", groupName = "Kaboom", groupStartCollapsed = true,
+            groupName = "Kaboom", groupStartCollapsed = true,
             guiUnits = " Seconds"),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
 
@@ -59,6 +59,17 @@ namespace Kaboom
         [KSPAction("Kaboom!")]
         public void KaboomAction(KSPActionParam _) => KaboomIt();
 
+        public override void OnStart(StartState state)
+        {
+            base.OnStart(state);
+
+            if (HighLogic.CurrentGame.Parameters.CustomParams<Options>().coloredPAW)
+                Fields["delay"].group.displayName = "<color=red><b>Kaboom Safety Cover</b></color>";
+            else
+                Fields["delay"].group.displayName = "<b>Kaboom Safety Cover</b>";
+
+        }
+
         private void KaboomIt()
         {
             Events["CancelKaboomEvent"].active = true;
@@ -89,7 +100,7 @@ namespace Kaboom
             }
             else
             {
-                part.explode();
+                Welding.SoftExplode(part);
                 return true;
             }
         }
