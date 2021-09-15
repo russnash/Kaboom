@@ -33,7 +33,7 @@ namespace Kaboom
             return sucess;
         }
 
-        private WeldingData LoadWeldingData()
+        public WeldingData LoadWeldingData()
         {
             /**********************
              * 
@@ -77,18 +77,22 @@ namespace Kaboom
 
         private Vector3 GetOffset(WeldingData wData)
         {
-            //var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
-            //var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
+            //Vector3 offset1 =
+            //nodeA.owner.transform.rotation * nodeA.position + nodeA.owner.transform.position -
+            //nodeB.owner.transform.rotation * nodeB.position + nodeB.owner.transform.position;
+            //Vector3 offset2 = wData.LinkedPartA.transform.localPosition - wData.LinkedPartB.transform.localPosition;
+            //offset2.Normalize();
+            //offset2 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
 
-            //Vector3 offset = nodeA.position - nodeB.position;   // offset in wrong direction, depends of angle of the craft? 
-            //Vector3 offset2 = nodeA.nodeTransform.localPosition - nodeB.nodeTransform.localPosition;   // // nulref 
+            var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);
+            var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartB);
 
-            // works for a stack of simmetrical parts 
-            Vector3 offset3 = wData.LinkedPartA.transform.localPosition - wData.LinkedPartB.transform.localPosition;
-            offset3.Normalize();
-            offset3 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
-            return offset3;
+            Vector3 offset = part.transform.rotation * (nodeA.position - nodeB.position);   
+            
+            return offset;
         }
+
+        
 
         private bool PerformWeld(WeldingData wData, bool compress)
         {
