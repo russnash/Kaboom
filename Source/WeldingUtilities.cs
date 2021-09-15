@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Kaboom
 {
-    public static class WeldingNodeUtilities
+    public static class WeldingUtilities
     {
         public static void SpawnStructures(Part thisPart, AttachNode thisNode)
         {

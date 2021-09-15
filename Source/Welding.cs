@@ -84,8 +84,8 @@ namespace Kaboom
             //offset2.Normalize();
             //offset2 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
 
-            var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);
-            var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartB);
+            var nodeA = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);
+            var nodeB = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartB);
 
             Vector3 offset = part.transform.rotation * (nodeA.position - nodeB.position);   
             
@@ -96,31 +96,31 @@ namespace Kaboom
 
         private bool PerformWeld(WeldingData wData, bool compress)
         {
-            var nodeA = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
-            var nodeB = WeldingNodeUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
+            var nodeA = WeldingUtilities.GetLinkingNode(wData.LinkedPartA, wData.KaboomGluedPart);
+            var nodeB = WeldingUtilities.GetLinkingNode(wData.LinkedPartB, wData.KaboomGluedPart);
 
             var offset = GetOffset(wData);
 
-            WeldingNodeUtilities.DetachPart(wData.KaboomGluedPart);
+            WeldingUtilities.DetachPart(wData.KaboomGluedPart);
 
-            WeldingNodeUtilities.SwapLinks(
+            WeldingUtilities.SwapLinks(
                 wData.LinkedPartA,
                 wData.KaboomGluedPart,
                 wData.LinkedPartB);
 
-            WeldingNodeUtilities.SwapLinks(
+            WeldingUtilities.SwapLinks(
                 wData.LinkedPartB,
                 wData.KaboomGluedPart,
                 wData.LinkedPartA);
 
             wData.KaboomGluedPart.SetCollisionIgnores();
 
-            WeldingNodeUtilities.SpawnStructures(wData.LinkedPartA, nodeA);
-            WeldingNodeUtilities.SpawnStructures(wData.LinkedPartB, nodeB);
+            WeldingUtilities.SpawnStructures(wData.LinkedPartA, nodeA);
+            WeldingUtilities.SpawnStructures(wData.LinkedPartB, nodeB);
 
             if (compress)
             {
-                WeldingNodeUtilities.MovePart(wData.LinkedPartB, offset);
+                WeldingUtilities.MovePart(wData.LinkedPartB, offset);
             }
 
             PartJoint newJoint = PartJoint.Create(
