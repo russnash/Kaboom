@@ -43,13 +43,12 @@ namespace Kaboom
                 MovePart(p, offset);
         }
 
-
         public static void SwapLinks(Part thisPart, Part oldPart, Part newPart)
         {
             if (thisPart.parent != null && thisPart.parent == oldPart)
                 thisPart.parent = newPart;
 
-            if(thisPart.topNode != null && thisPart.topNode.attachedPart == oldPart)
+            if (thisPart.topNode != null && thisPart.topNode.attachedPart == oldPart)
                 thisPart.topNode.attachedPart = newPart;
 
             if (thisPart.attachJoint != null)

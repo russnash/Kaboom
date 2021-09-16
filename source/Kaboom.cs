@@ -23,7 +23,7 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
-        [KSPEvent(groupName = "Kaboom", 
+        [KSPEvent(groupName = "Kaboom",
             guiActive = true, guiActiveEditor = true, active = true, guiActiveUncommand = true)]
         public void GluedEvent()
         {
@@ -39,14 +39,14 @@ namespace Kaboom
                 Events["GluedEvent"].guiName = "Superglue: " + Localizer.Format("#autoLOC_6001071")/*Disabled*/;
         }
 
-        [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom", 
+        [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = true, guiActiveUncommand = true)]
         public void KaboomEvent()
         {
             KaboomIt();
         }
 
-        [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom", 
+        [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = false, guiActiveUncommand = true)]
         public void CancelKaboomEvent()
         {

@@ -29,11 +29,11 @@ namespace Kaboom
             if (wData == null)
                 return false;
 
-            bool sucess =  PerformWeld(wData, compress);
+            bool sucess = PerformWeld(wData, compress);
             return sucess;
         }
 
-        public WeldingData LoadWeldingData()
+        private WeldingData LoadWeldingData()
         {
             /**********************
              * 
@@ -74,7 +74,6 @@ namespace Kaboom
             return wData;
         }
 
-
         private Vector3 GetOffset(WeldingData wData)
         {
             //Vector3 offset1 =
@@ -84,15 +83,13 @@ namespace Kaboom
             //offset2.Normalize();
             //offset2 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
 
-            var nodeA = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);
-            var nodeB = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartB);
+            AttachNode a = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);
+            AttachNode b = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartB);
 
-            Vector3 offset = part.transform.rotation * (nodeA.position - nodeB.position);   
-            
+            Vector3 offset = part.transform.rotation * (a.position - b.position);
+
             return offset;
         }
-
-        
 
         private bool PerformWeld(WeldingData wData, bool compress)
         {

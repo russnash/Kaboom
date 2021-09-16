@@ -7,7 +7,7 @@ using System.Reflection;
 // This will add a tab to the Stock Settings in the Difficulty settings
 // To use, reference the setting using the following:
 //
-//  HighLogic.CurrentGame.Parameters.CustomParams<Options>()
+// HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>()
 //
 // As it is set up, the option is disabled, so in order to enable it, the player would have
 // to deliberately go in and change it
@@ -27,9 +27,8 @@ namespace Kaboom
 
 
         [GameParameters.CustomParameterUI("Soft Explode",
-            toolTip = "Kaboom Explodes makes less fire",
-            unlockedDuringMission = true
-            )]
+            toolTip = "Kaboom explosions make less fire",
+            unlockedDuringMission = true)]
         public bool softExplode = false;
 
         [GameParameters.CustomParameterUI("PAW Safety Cover is Red",
