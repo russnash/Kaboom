@@ -108,7 +108,7 @@ namespace Kaboom
         {
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;
-            ScreenMessages.PostScreenMessage("Kaboom cancelled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
+            ScreenMessages.PostScreenMessage("Kaboom canceled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
             timerActive = false;
         }
 
