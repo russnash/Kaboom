@@ -175,3 +175,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 graphics/Thumbs.db
 *.old
+GameData/Kaboom/plugins/Kaboom.dll
