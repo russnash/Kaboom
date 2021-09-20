@@ -15,12 +15,6 @@ namespace Kaboom
         public float delay = 0;
 
         [KSPField(isPersistant = true)]
-        public bool timerActive = false;
-
-        [KSPField(isPersistant = true)]
-        public double kaboomTime;
-
-        [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
         [KSPEvent(groupName = "Kaboom",
@@ -75,35 +69,40 @@ namespace Kaboom
         {
             Events["CancelKaboomEvent"].active = true;
             Events["KaboomEvent"].active = false;
-            part.force_activate();
 
             if (delay == 0)
             {
-                bool success = Proceed();
-                if (!success)
-                    CancelKaboomIt();
+                Proceed();
             }
             else
             {
+                float delay_scaled = delay;
+
+                if (TimeWarp.WarpMode == TimeWarp.Modes.HIGH)
+                    delay_scaled /= TimeWarp.CurrentRate;
+
+                Invoke("Proceed", delay_scaled);
                 ScreenMessages.PostScreenMessage("Kaboom set for " + delay + " seconds.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
-                kaboomTime = Planetarium.GetUniversalTime() + delay;
-                timerActive = true;
             }
         }
 
-        private bool Proceed()
+        private void Proceed()
         {
+            bool success;
             if (isGlued)
             {
                 var k = new Welding(vessel, part);
-                bool success = k.MergeParts(true);
-                return success;
+                success = k.MergeParts(true);
             }
             else
             {
+                part.force_activate();
                 WeldingUtilities.Explode(part);
-                return true;
+                success = true;
             }
+
+            if (!success)
+                CancelKaboomIt();
         }
 
         private void CancelKaboomIt()
@@ -111,23 +110,6 @@ namespace Kaboom
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;
             ScreenMessages.PostScreenMessage("Kaboom canceled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
-            timerActive = false;
-        }
-
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-            if (timerActive)
-            {
-                if (Planetarium.GetUniversalTime() >= kaboomTime)
-                {
-                    timerActive = false;
-                    bool success = Proceed();
-                    if (!success)
-                        CancelKaboomIt();
-                }
-            }
-            //base.OnUpdate();
         }
     }
 }
