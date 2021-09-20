@@ -1,4 +1,5 @@
 ﻿using KSP.Localization;
+using UnityEngine;
 
 namespace Kaboom
 {
@@ -7,11 +8,10 @@ namespace Kaboom
     /// </summary>
     public class ModuleKaboom : PartModule
     {
-        [KSPField(isPersistant = true, guiActiveEditor = true, guiActive = true, guiName = "Kaboom delay",
-            groupName = "Kaboom", groupStartCollapsed = true,
-            guiUnits = " Seconds"),
+        [KSPField(isPersistant = true,
+            guiName = "Kaboom delay", groupName = "Kaboom", groupStartCollapsed = true, guiUnits = " Seconds",
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
-
         public float delay = 0;
 
         [KSPField(isPersistant = true)]
@@ -24,7 +24,8 @@ namespace Kaboom
         public bool isGlued = false;
 
         [KSPEvent(groupName = "Kaboom",
-            guiActive = true, guiActiveEditor = true, active = true, guiActiveUncommand = true)]
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiActiveEditor = true,
+            active = true, guiActiveUncommand = true)]
         public void GluedEvent()
         {
             isGlued = !isGlued;
@@ -40,14 +41,16 @@ namespace Kaboom
         }
 
         [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = true, guiActiveUncommand = true)]
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f,
+            active = true, guiActiveUncommand = true)]
         public void KaboomEvent()
         {
             KaboomIt();
         }
 
         [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, active = false, guiActiveUncommand = true)]
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, 
+            active = false, guiActiveUncommand = true)]
         public void CancelKaboomEvent()
         {
             CancelKaboomIt();
@@ -66,7 +69,6 @@ namespace Kaboom
                 Fields["delay"].group.displayName = "Kaboom Safety Cover";
 
             GUITextUpdate();
-
         }
 
         private void KaboomIt()
