@@ -10,7 +10,7 @@ namespace Kaboom
     {
         [KSPField(isPersistant = true,
             guiName = "Kaboom delay", groupName = "Kaboom", groupStartCollapsed = true, guiUnits = " Seconds",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiActiveEditor = true),
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
         public float delay = 0;
 
@@ -18,7 +18,7 @@ namespace Kaboom
         public bool isGlued = false;
 
         [KSPEvent(groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, guiActiveEditor = true,
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true,
             active = true, guiActiveUncommand = true)]
         public void GluedEvent()
         {
@@ -35,7 +35,7 @@ namespace Kaboom
         }
 
         [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f,
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f,
             active = true, guiActiveUncommand = true)]
         public void KaboomEvent()
         {
@@ -43,7 +43,7 @@ namespace Kaboom
         }
 
         [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 5f, 
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, 
             active = false, guiActiveUncommand = true)]
         public void CancelKaboomEvent()
         {
