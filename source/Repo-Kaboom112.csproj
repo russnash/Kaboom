@@ -58,6 +58,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Version.tt</DependentUpon>
     </Compile>
+    <Compile Include="Support\Settings.cs" />
+    <Compile Include="Welding\Welding.cs" />
+    <Compile Include="Welding\WeldingData.cs" />
+    <Compile Include="Welding\WeldingUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
