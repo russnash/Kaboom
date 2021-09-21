@@ -1,8 +1,9 @@
 {
  "schemaVersion": 1,
  "label": "License",
- "labelColor": "black",
+ "labelColor": "white",
  "message": "GPLv2",
- "color": "red",
- "style": "plastic"
+ "color": "A42E2B",
+ "style": "plastic",
+ "test"" "abc"
 }
