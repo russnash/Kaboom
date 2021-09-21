@@ -26,6 +26,9 @@ Kaboom! is a very simple mod for KSP that allows the destruction of individual p
 - Kaboom parts either through the right-click menu or via action groups.
 - Parts can be kaboomed either immediately or via a tweakable delay timer of up to 30 seconds.
 - Kabooms can also be set by kerbals on EVA.
+- Another very helpful feature is to destroy parts in Stock Inventory, because there is no way to destroy parts, that you can't put out of inventory, like Jetpacks, personal parachutes, etc
+- Currently KaboOm does not work on asteroids and comets. :(
+
 ***
 
 Future planned features:
