@@ -89,7 +89,7 @@ namespace Kaboom
                 {
                     ScreenMessages.PostScreenMessage(
                         "Docked vessels detected, unable to explode the pocking port.\n" + 
-                        "Trying to explode both docking ports"
+                        "Trying to explode both docking ports",5
                     );
                     wData.LinkedPartA = WeldingDockingPorts.FindAttachedPart(wData.DockingPortA, wData.DockingPortB);
                     wData.LinkedPartB = WeldingDockingPorts.FindAttachedPart(wData.DockingPortB, wData.DockingPortA);
