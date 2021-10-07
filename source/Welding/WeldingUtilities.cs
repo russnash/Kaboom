@@ -89,5 +89,16 @@ namespace Kaboom
 
             thisPart.explode();
         }
+
+        public static bool IsWeldablePort(Part p)
+        {
+            if (p == null)
+                return false;
+
+            if (!p.FindModulesImplementing<ModuleDockingNode>().Any())
+                return false;
+
+            return true;
+        }
     }
 }

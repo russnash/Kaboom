@@ -61,6 +61,7 @@
     <Compile Include="Support\Settings.cs" />
     <Compile Include="Welding\Welding.cs" />
     <Compile Include="Welding\WeldingData.cs" />
+    <Compile Include="Welding\WeldingDockingPorts.cs" />
     <Compile Include="Welding\WeldingUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
