@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
-using System.Reflection;
-using PreFlightTests;
-using TestScripts;
+
 
 namespace Kaboom
 {
@@ -101,7 +96,7 @@ namespace Kaboom
             if (p.parent != null)
                 return p.parent;
 
-            return p.children.Count() == 1 ? p.children[0] : null;
+            return p.children.Count == 1 ? p.children[0] : null;
         }
     }
 }
