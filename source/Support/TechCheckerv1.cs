@@ -13,7 +13,7 @@ namespace Kaboom
             get;
             set;
         }
-        
+
         public static bool RealChutes
         {
             get;
@@ -103,14 +103,14 @@ namespace Kaboom
             }
         }
 
-        private void OnShowUI()
-        {
-            Kaboom.HideUI = false;
-        }
+        //private void OnShowUI()
+        //{
+        //    Kaboom.HideUI = false;
+        //}
 
-        private void OnHideUI()
-        {
-            Kaboom.HideUI = true;
-        }
+        //private void OnHideUI()
+        //{
+        //    Kaboom.HideUI = true;
+        //}
     }
 }
