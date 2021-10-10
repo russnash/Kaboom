@@ -16,7 +16,7 @@ updated: 08 Oct 2021 -->
 
 ## Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@russnash37][LINK:russnash37]  
 
-[![Mod Version][MOD:shd:latest]][MOD:url] [![KSP version][KSP:shd]][KSP:url]  [![License GPLv2][LIC:shd]][LIC:url]  
+[![Mod Version][MOD:shd:latest]][MOD:forum] [![KSP version][KSP:shd]][KSP:url]  [![License GPLv2][LIC:shd]][LIC:url]  
 [![Curseforge][CURSFG:shd]][CURSFG:url] [![CKAN][CKAN:shd]][CKAN:url] [![GitHub][GITHUB:shd]][GITHUB:url] [![SpaceDock][SPCDCK:shd]][SPCDCK:url]  
 
 ![Code][CODE:shd] ![KSP-AVC][AVC:shd] ![Validate AVC .version files][AVCVLD:shd] 
