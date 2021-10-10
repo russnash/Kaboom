@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Reflection;
+using KSP.Localization;
 
 // This will add a tab to the Stock Settings in the Difficulty settings
 // To use, reference the setting using the following:
@@ -19,22 +20,32 @@ namespace Kaboom
 
     public class KaboomSettings : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "Kaboom!"; } }
+        public override string Title { get { return "#BOOM-settings-titl"; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "Kaboom!"; } }
-        public override string DisplaySection { get { return "Kaboom!"; } }
+        public override string Section { get { return "#BOOM-settings-sect"; } }
+        public override string DisplaySection { get { return "#BOOM-settings-disp"; } }
         public override int SectionOrder { get { return 1; } }
 
 
-        [GameParameters.CustomParameterUI("Soft Explode",
-            toolTip = "Kaboom explosions make less fire",
+        [GameParameters.CustomParameterUI("#BOOM-settings-softExplode",
+            toolTip = "#BOOM-settings-softExplode-tt",
             unlockedDuringMission = true)]
         public bool softExplode = false;
 
-        [GameParameters.CustomParameterUI("PAW Safety Cover is Red",
-            toolTip = "Red color coding of Kaboom Safety Cover in the Part Action Window.\nUpdates after scene change.",
+        [GameParameters.CustomParameterUI("#BOOM-settings-coloredPaw",
+            toolTip = "#BOOM-settings-coloredPaw-tt",
             unlockedDuringMission = true)]
         public bool coloredPAW = true;
+
+        [GameParameters.CustomParameterUI("#BOOM-settings-xDebug",
+            toolTip = "#BOOM-settings-xDebug-tt",
+            unlockedDuringMission = true)]
+        public bool xDebug = true;
+
+        [GameParameters.CustomParameterUI("#BOOM-settings-xLogging",
+            toolTip = "#BOOM-settings-xLogging-tt",
+            unlockedDuringMission = true)]
+        public bool xLogging = true;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
@@ -80,4 +91,4 @@ namespace Kaboom
     }
 }
 
-   
+

@@ -4,6 +4,7 @@
 using System;
 using UnityEngine;
 using System.Linq;
+using KSP.Localization;
 
 namespace Kaboom
 {
@@ -22,7 +23,7 @@ namespace Kaboom
         {
             if (vessel.rootPart == part)
             {
-                ScreenMessages.PostScreenMessage("You cannot weld the root part!");
+                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-MergePartsMsg", part.name));
                 return false;
             }
 
@@ -47,7 +48,7 @@ namespace Kaboom
              **********************/
 
             var wData = new WeldingData();
-            
+
 
             int attachedPartsCount = 0;
             foreach (var n in part.attachNodes)
@@ -87,10 +88,7 @@ namespace Kaboom
 
                 if (wData.DockingPortA != null && wData.DockingPortB != null)
                 {
-                    ScreenMessages.PostScreenMessage(
-                        "Docked vessels detected, unable to explode the pocking port.\n" + 
-                        "Trying to explode both docking ports",5
-                    );
+                    ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-WeldingData-A", 5));
                     wData.LinkedPartA = WeldingDockingPorts.FindAttachedPart(wData.DockingPortA, wData.DockingPortB);
                     wData.LinkedPartB = WeldingDockingPorts.FindAttachedPart(wData.DockingPortB, wData.DockingPortA);
                 }
@@ -98,13 +96,13 @@ namespace Kaboom
 
             if (wData.LinkedPartA == null || wData.LinkedPartB == null)
             {
-                ScreenMessages.PostScreenMessage("This part need to have 2 parts on attachment nodes");
+                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-WeldingData-B"));
                 return null;
             }
 
             if (wData.KaboomGluedPart == vessel.rootPart)
             {
-                ScreenMessages.PostScreenMessage("This part is the root part!  Cancelling");
+                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-WeldingData-C"));
                 return null;
             }
 
@@ -121,7 +119,7 @@ namespace Kaboom
             //offset2 *= WeldingNodeUtilities.GetPartThickness(wData.KaboomGluedPart);
 
             Vector3 offset;
-            
+
             if (wData.KaboomGluedPart)
             {
                 AttachNode a = WeldingUtilities.GetLinkingNode(wData.KaboomGluedPart, wData.LinkedPartA);

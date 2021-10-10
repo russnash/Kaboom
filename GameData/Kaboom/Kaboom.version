@@ -1,5 +1,5 @@
 {
-    "NAME"           : "Kaboom",
+    "NAME"           : "Kaboom! (BOOM)",
     "URL"            : "https://raw.githubusercontent.com/zer0Kerbal/Kaboom/master/Kaboom.version",
     "DOWNLOAD"       : "https://www.curseforge.com/kerbal/ksp-mods/kabooom/files/3392488",
     "CHANGE_LOG_URL" : "https://raw.githubusercontent.com/zer0Kerbal/Kaboom/master/Changelog.cfg",
@@ -14,7 +14,7 @@
         "MAJOR" : 1,
         "MINOR" : 3,
         "PATCH" : 99,
-        "BUILD" : 1
+        "BUILD" : 2
     },
     "KSP_VERSION" :
     {

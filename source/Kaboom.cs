@@ -9,7 +9,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true,
-            guiName = "Kaboom delay", groupName = "Kaboom", groupStartCollapsed = true, guiUnits = " Seconds",
+            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " Seconds",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
         public float delay = 0;
@@ -17,7 +17,7 @@ namespace Kaboom
         [KSPField(isPersistant = true)]
         public bool isGlued = false;
 
-        [KSPEvent(groupName = "Kaboom",
+        [KSPEvent(groupName = "KaboOm",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true,
             active = true, guiActiveUncommand = true)]
         public void GluedEvent()
@@ -29,12 +29,12 @@ namespace Kaboom
         private void GUITextUpdate()
         {
             if (isGlued)
-                Events["GluedEvent"].guiName = "Superglue: " + Localizer.Format("#autoLOC_6001072")/*Enabled*/;
+                Events["GluedEvent"].guiName = Localizer.Format("#BOOM-GluedEvent") + ": " + Localizer.Format("#autoLOC_6001072")/*Enabled*/;
             else
-                Events["GluedEvent"].guiName = "Superglue: " + Localizer.Format("#autoLOC_6001071")/*Disabled*/;
+                Events["GluedEvent"].guiName = Localizer.Format("#BOOM-GluedEvent") + ": " + Localizer.Format("#autoLOC_6001071")/*Disabled*/;
         }
 
-        [KSPEvent(guiName = "Kaboom!", groupName = "Kaboom",
+        [KSPEvent(guiName = "#BOOM-KaboomEvent", groupName = "KaboOm",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f,
             active = true, guiActiveUncommand = true)]
         public void KaboomEvent()
@@ -42,15 +42,15 @@ namespace Kaboom
             KaboomIt();
         }
 
-        [KSPEvent(guiName = "Cancel Kaboom!", groupName = "Kaboom",
-            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, 
+        [KSPEvent(guiName = "#BOOM-Cancel", groupName = "KaboOm",
+            guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f,
             active = false, guiActiveUncommand = true)]
         public void CancelKaboomEvent()
         {
             CancelKaboomIt();
         }
 
-        [KSPAction("Kaboom!")]
+        [KSPAction("#BOOM-KaboomAction")]
         public void KaboomAction(KSPActionParam _) => KaboomIt();
 
         public override void OnStart(StartState state)
@@ -58,8 +58,10 @@ namespace Kaboom
             base.OnStart(state);
 
             if (HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>().coloredPAW)
+                //Fields["delay"].group.displayName = Localizer.Format("<color=red>#BOOM-SafetyCover</color>");
                 Fields["delay"].group.displayName = "<color=red>Kaboom Safety Cover</color>";
             else
+                //Fields["delay"].group.displayName = Localizer.Format("#BOOM-SafetyCover");
                 Fields["delay"].group.displayName = "Kaboom Safety Cover";
 
             GUITextUpdate();
@@ -82,7 +84,7 @@ namespace Kaboom
                     delay_scaled /= TimeWarp.CurrentRate;
 
                 Invoke("Proceed", delay_scaled);
-                ScreenMessages.PostScreenMessage("Kaboom set for " + delay + " seconds.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
+                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-KaboomItMsg", delay), 5.0f, ScreenMessageStyle.UPPER_CENTER);
             }
         }
 
@@ -109,7 +111,7 @@ namespace Kaboom
         {
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;
-            ScreenMessages.PostScreenMessage("Kaboom canceled.", 5.0f, ScreenMessageStyle.UPPER_CENTER);
+            ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-CancelKoboomIt"), 5.0f, ScreenMessageStyle.UPPER_CENTER);
         }
     }
 }

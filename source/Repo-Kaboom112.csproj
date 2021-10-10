@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Version.tt</DependentUpon>
     </Compile>
+    <Compile Include="Support\InstallChecker.cs" />
     <Compile Include="Support\Settings.cs" />
     <Compile Include="Welding\Welding.cs" />
     <Compile Include="Welding\WeldingData.cs" />
