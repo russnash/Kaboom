@@ -9,7 +9,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true,
-            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " Seconds",
+            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = "#BOOM-delay-Units",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
         public float delay = 0;
