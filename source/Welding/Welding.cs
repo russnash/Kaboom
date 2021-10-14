@@ -21,12 +21,6 @@ namespace Kaboom
 
         public bool MergeParts(bool compress)
         {
-            if (vessel.rootPart == part)
-            {
-                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-MergePartsMsg", part.name));
-                return false;
-            }
-
             var wData = LoadWeldingData();
             if (wData == null)
                 return false;
@@ -46,6 +40,12 @@ namespace Kaboom
              *     LPA==LPB
              * 
              **********************/
+
+            if (vessel.rootPart == part)
+            {
+                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-MergePartsMsg"));
+                return null;
+            }
 
             var wData = new WeldingData();
 
@@ -97,12 +97,6 @@ namespace Kaboom
             if (wData.LinkedPartA == null || wData.LinkedPartB == null)
             {
                 ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-WeldingData-B"));
-                return null;
-            }
-
-            if (wData.KaboomGluedPart == vessel.rootPart)
-            {
-                ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-WeldingData-C"));
                 return null;
             }
 
