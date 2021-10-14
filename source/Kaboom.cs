@@ -9,7 +9,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true,
-            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " " + "#BOOM-ModuleKaboom-delay-Units",
+            guiName = "#BOOM-delay",  groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " " + "#BOOM-delay-Units",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
         public float delay = 0;
@@ -58,11 +58,9 @@ namespace Kaboom
             base.OnStart(state);
 
             if (HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>().coloredPAW)
-                //Fields["delay"].group.displayName = Localizer.Format("<color=red>#BOOM-SafetyCover</color>");
                 Fields["delay"].group.displayName = System.String.Format("<color=red>" + Localizer.Format("Kaboom Safety Cover") + "</color>");
             else
-                //Fields["delay"].group.displayName = Localizer.Format("#BOOM-SafetyCover");
-                Fields["delay"].group.displayName = Localizer.Format("Kaboom Safety Cover");
+                Fields["delay"].group.displayName = Localizer.Format("#BOOM-SafetyCover");
 
             GUITextUpdate();
         }
@@ -111,7 +109,7 @@ namespace Kaboom
         {
             Events["CancelKaboomEvent"].active = false;
             Events["KaboomEvent"].active = true;
-            ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-CancelKoboomIt"), 5.0f, ScreenMessageStyle.UPPER_CENTER);
+            ScreenMessages.PostScreenMessage(Localizer.Format("#BOOM-CancelKoboomIt"));
         }
     }
 }

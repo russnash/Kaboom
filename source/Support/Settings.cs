@@ -40,12 +40,12 @@ namespace Kaboom
         [GameParameters.CustomParameterUI("#BOOM-settings-xDebug",
             toolTip = "#BOOM-settings-xDebug-tt",
             unlockedDuringMission = true)]
-        public bool xDebug = true;
+        public bool xDebug = false;
 
         [GameParameters.CustomParameterUI("#BOOM-settings-xLogging",
             toolTip = "#BOOM-settings-xLogging-tt",
             unlockedDuringMission = true)]
-        public bool xLogging = true;
+        public bool xLogging = false;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
