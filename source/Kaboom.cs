@@ -9,7 +9,7 @@ namespace Kaboom
     public class ModuleKaboom : PartModule
     {
         [KSPField(isPersistant = true,
-            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " Seconds",
+            guiName = "#BOOM-delay", groupName = "KaboOm", groupStartCollapsed = true, guiUnits = " " + "#BOOM-ModuleKaboom-delay-Units",
             guiActive = true, guiActiveUnfocused = true, unfocusedRange = 10f, guiActiveEditor = true),
             UI_FloatRange(minValue = 0f, maxValue = 30f, stepIncrement = 1f)]
         public float delay = 0;
@@ -59,10 +59,10 @@ namespace Kaboom
 
             if (HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>().coloredPAW)
                 //Fields["delay"].group.displayName = Localizer.Format("<color=red>#BOOM-SafetyCover</color>");
-                Fields["delay"].group.displayName = "<color=red>Kaboom Safety Cover</color>";
+                Fields["delay"].group.displayName = System.String.Format("<color=red>" + Localizer.Format("Kaboom Safety Cover") + "</color>");
             else
                 //Fields["delay"].group.displayName = Localizer.Format("#BOOM-SafetyCover");
-                Fields["delay"].group.displayName = "Kaboom Safety Cover";
+                Fields["delay"].group.displayName = Localizer.Format("Kaboom Safety Cover");
 
             GUITextUpdate();
         }
