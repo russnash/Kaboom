@@ -209,7 +209,7 @@ Kaboom! is a very simple mod for KSP that allows the destruction of individual p
 [MOD:chlog]: https://raw.githubusercontent.com/zer0Kerbal/Kaboom/master/Changelog.cfg "Changelog"
 [MOD:contr]: https://github.com/zer0Kerbal/.github/blob/master/.github/CONTRIBUTING.md "Contributing"
 [MOD:discu]: https://github.com/zer0Kerbal/Kaboom/discussions "Discussions"
-[MOD:forum]: https://forum.kerbalspaceprogram.com/index.php?/topic/191045-* "KSP Forum"
+[MOD:forum]: https://forum.kerbalspaceprogram.com/index.php?/topic/192938-* "KSP Forum"
 [MOD:issue]: https://github.com/zer0Kerbal/Kaboom/issues "Issues"
 [MOD:known]: https://github.com/zer0Kerbal/Kaboom/wiki/Known-Issues "Know Issues"
 [MOD:licns]: https://github.com/zer0Kerbal/Kaboom/blob/master/LICENSE "Licence"
