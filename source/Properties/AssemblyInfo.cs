@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Kerbal Space Program addon that allows the destruction of individual parts")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("rushnash37, zer0Kerbal")]
-[assembly: AssemblyProduct("Kaboom")]
-[assembly: AssemblyCopyright("Copyright © 2020 All Rights Reserved")]
+[assembly: AssemblyProduct("Kaboom!")]
+[assembly: AssemblyCopyright("Copyright © 2020, 2021 All Rights Reserved")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

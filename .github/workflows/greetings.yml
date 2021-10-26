@@ -1,6 +1,10 @@
+# 1.1.0.0 - 13 Oct 2021
+# An action for filtering pull requests and issues from first-time contributors.
+# https://github.com/marketplace/actions/first-interaction
+
 name: Greetings
 
-on: [pull_request, issues]
+on: [pull_request, issues, issue_comment, discussion_comment, fork, gollum]
 
 jobs:
   greeting:

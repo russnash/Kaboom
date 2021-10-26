@@ -3,11 +3,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Reflection;
+using KSP.Localization;
 
-// This will add a tab to the Stock Settings in the Difficulty settings called "On Demand Fuel Cells"
+// This will add a tab to the Stock Settings in the Difficulty settings
 // To use, reference the setting using the following:
 //
-//  HighLogic.CurrentGame.Parameters.CustomParams<Options>().needsECtoStart
+// HighLogic.CurrentGame.Parameters.CustomParams<KaboomSettings>()
 //
 // As it is set up, the option is disabled, so in order to enable it, the player would have
 // to deliberately go in and change it
@@ -17,39 +18,40 @@ namespace Kaboom
     // http://forum.kerbalspaceprogram.com/index.php?/topic/147576-modders-notes-for-ksp-12/#comment-2754813
     // search for "Mod integration into Stock Settings
 
-    public class Options : GameParameters.CustomParameterNode
+    public class KaboomSettings : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "Default Settings"; } }
+        public override string Title { get { return "#BOOM-settings-titl"; } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "Kaboom!"; } }
-        public override string DisplaySection { get { return "Kaboom!"; } }
+        public override string Section { get { return "#BOOM-settings-sect"; } }
+        public override string DisplaySection { get { return "#BOOM-settings-disp"; } }
         public override int SectionOrder { get { return 1; } }
 
 
-        [GameParameters.CustomParameterUI("Require EC to run",
-            toolTip = "if set to yes, the fuel cells will 'stall' if the vessels total electric charge reaches zero and will not function until vessel electric charge is above zero.",
-            newGameOnly = false,
-            unlockedDuringMission = true
-            )]
-        public bool needsECtoStart = false;
-
-        [GameParameters.CustomParameterUI("Auto Fuel Mode Switch",
-            toolTip = "if current fuel mode becomes fuel deprived, will 'hunt' or 'search' for a fuel mode that has fuel.",
-            newGameOnly = false,
+        [GameParameters.CustomParameterUI("#BOOM-settings-softExplode",
+            toolTip = "#BOOM-settings-softExplode-tt",
             unlockedDuringMission = true)]
-        public bool autoSwitch = true;
+        public bool softExplode = false;
 
-        [GameParameters.CustomParameterUI("PAW Color",
-            toolTip = "allow color coding in ODC PAW (part action window) / part RMB (right menu button).",
-            newGameOnly = false,
+        [GameParameters.CustomParameterUI("#BOOM-settings-coloredPaw",
+            toolTip = "#BOOM-settings-coloredPaw-tt",
             unlockedDuringMission = true)]
         public bool coloredPAW = true;
+
+        [GameParameters.CustomParameterUI("#BOOM-settings-xDebug",
+            toolTip = "#BOOM-settings-xDebug-tt",
+            unlockedDuringMission = true)]
+        public bool xDebug = false;
+
+        [GameParameters.CustomParameterUI("#BOOM-settings-xLogging",
+            toolTip = "#BOOM-settings-xLogging-tt",
+            unlockedDuringMission = true)]
+        public bool xLogging = false;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
 
 
-#if true
+#if false
         public override bool HasPresets { get { return true; } }
         public override void SetDifficultyPreset(GameParameters.Preset preset)
         {
@@ -89,4 +91,4 @@ namespace Kaboom
     }
 }
 
-   
+
