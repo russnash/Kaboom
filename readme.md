@@ -12,7 +12,8 @@ updated: 08 Oct 2021 -->
 
 # Kaboom! (BOOM)  
 
-*Another way to not go to space today! What can me more Kerbal than more Explosions!*
+*Another way to not go to space today! What can be more Kerbal than more Explosions!*
+*Now with SuperKlue Implosions!*
 
 ## Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@russnash37][LINK:russnash37]  
 
