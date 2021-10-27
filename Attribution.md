@@ -18,6 +18,7 @@
 [LINK:flart]: https://forum.kerbalspaceprogram.com/index.php?/profile/181486-flart/ "Flart"  
 [LINK:yalov]: https://github.com/yalov "yalov"  
 [LINK:zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-zer0kerbal/ "zer0Kerbal"
+[LINK:vinix38]: https://github.com/vinix38 "vinix38"
 
 <!-- Localization -->
 [EN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/Localization/img/American-flag-sm.png "American English"  
