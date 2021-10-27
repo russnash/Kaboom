@@ -9,6 +9,7 @@
 - ![][EN] English - [zer0Kerbal][LINK:zer0Kerbal]
 - ![][RU] Russian - [Forums: '@flart'][LINK:flart] [Github: @yalov][LINK:yalov]
 - ![][ES] Spanish - [@`Tacombel`][LINK:tacombel]
+- ![][FR] French  - [Github: @vinix38][LINK:vinix38]
 
 <!--- statics -->
 [LINK:russnash37]: https://forum.kerbalspaceprogram.com/index.php?/profile/77512-russnash37/ "Forums: RussNash37"  
